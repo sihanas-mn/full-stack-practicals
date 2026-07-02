@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css">
+</head>
+<body>
+    <div id="color-div" class="min-h-screen bg-amber-600">
+
+    </div>
+
+    <script>
+        const elClrDiv = document.getElementById("color-div")
+
+        elClrDiv.addEventListener("click", changeClr)
+
+        function changeClr() {
+            // elClrDiv.classList.remove("bg-amber-600")
+            elClrDiv.classList.toggle("bg-blue-600")
+        }
+    </script>
+</body>
+</html>

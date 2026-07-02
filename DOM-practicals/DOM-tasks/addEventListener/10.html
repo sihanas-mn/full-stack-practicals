@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time-display"></h1>
+    <button id="show-time">show time</button>
+
+
+    <script>
+        const elTimeDisplay = document.getElementById("time-display")
+        const elShowTimeBtn = document.getElementById("show-time")
+
+        elShowTimeBtn.addEventListener("click", ProcessTime)
+
+        function ProcessTime() {
+            let timeNow = new Date()
+            let finalTime = `${timeNow.getHours()}:${timeNow.getMinutes()}:${timeNow.getSeconds()}`
+            console.log(finalTime)
+            elTimeDisplay.textContent = finalTime
+        }
+    </script>
+</body>
+</html>

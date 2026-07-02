@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body class="" style="background-color:blue;">
+    <button id="bg-btn" class="border p-2 rounded-2xl">Change BG</button>
+
+
+    <script>
+        const elBtn = document.getElementById("bg-btn")
+
+        elBtn.addEventListener("click", changeBg)
+        const elBody = document.body
+
+
+        function changeBg() {
+            elBody.style.backgroundColor = "red"
+        }
+    </script>
+</body>
+</html>

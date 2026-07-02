@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="https://static.desygner.com/wp-content/uploads/sites/13/2022/05/04141642/Free-Stock-Photos-01.jpg"
+      alt="img here"
+    />
+    <button id="showImg">Click to show the image</button>
+    <script>
+        const elImg = document.querySelector("img");
+        const elBtn = document.getElementById("showImg");
+        
+      elImg.addEventListener("click", hideImg);
+      elBtn.addEventListener("click", showImg);
+
+      function hideImg() {
+        elImg.style.visibility = "hidden";
+      }
+
+      function showImg() {
+            elImg.style.visibility = "visible"
+        }
+    </script>
+  </body>
+</html>

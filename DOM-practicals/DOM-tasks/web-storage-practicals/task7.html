@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="" id="get-name">
+        <input type="text" name="" id="get-email">
+        <input type="number" name="" id="get-phone">
+
+        <button id="saveBtn" form="submit">Click to save</button>
+    </form>
+
+    <div>
+        <p>name: <span id="nameShow"></span></p>
+        <p>email: <span id="emailShow"></span></p>
+        <p>Phone: <span id="phoneShow"></span></p>
+        <button id="showBtn">show pre-saved</button>
+    </div>
+
+    <script>
+        elSaveBtn = document.getElementById("saveBtn")
+        elNameInp = document.getElementById("get-name")
+        elEmailInp = document.getElementById("get-email")
+        elPhoneInp = document.getElementById("get-phone")
+
+        elShowName = document.getElementById("nameShow")
+        elShowEmail = document.getElementById("emailShow")
+        elShowPhone = document.getElementById("phoneShow")
+        elShowBtn = document.getElementById("showBtn")
+        
+        function saveLocal() {
+            localStorage.setItem("name", elNameInp.value)
+            localStorage.setItem("email", elEmailInp.value)
+            localStorage.setItem("phone", elPhoneInp.value)
+        }
+
+        function showLocal() {
+            elShowName.textContent = localStorage.getItem("name")
+            elShowEmail.textContent = localStorage.getItem("email")
+            elShowPhone.textContent = localStorage.getItem("phone")
+        }
+
+        elSaveBtn.addEventListener("click", saveLocal)
+        elShowBtn.addEventListener("click", showLocal)
+
+    </script>
+</body>
+</html>

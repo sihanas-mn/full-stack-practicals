@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>To-Do List</p>
+    <input type="text" name="" id="add-task">
+    <button onclick="addTask()">Add task</button>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        elTaskInput = document.getElementById("add-task")
+        elTaskList = document.getElementById("list")
+
+        function addTask() {
+            let newTask = elTaskInput.value
+            elTaskList.innerHTML += `<li>${newTask}</li>`
+            localStorage.setItem("tasks", JSON.stringify(elTaskList.innerHTML))
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="value-inp">
+    <ul></ul>
+    <button id="addBtn">Click to add</button>
+
+
+    <script>
+        const elAddBtn = document.getElementById("addBtn")
+        const elGetValue = document.getElementById("value-inp")
+        const elList = document.querySelector("ul")
+        elAddBtn.addEventListener("click", addToList)
+
+        function addToList() {
+            elList.innerHTML += `<li>${elGetValue.value}</li>`
+        }
+    </script>
+</body>
+</html>

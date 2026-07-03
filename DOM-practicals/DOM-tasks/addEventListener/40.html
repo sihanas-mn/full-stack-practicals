@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .card {
+        width: 30%;
+        height: 200px;
+        border: 1px solid black;
+        overflow: hidden;
+      }
+
+      .card img {
+        object-fit: contain;
+        max-width: fit-content;
+        max-height: fit-content;
+        background-repeat : no-repeat;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1692641346414-02a56f346626?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1782174177406-d36704027953?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1675017472673-df8c2ec1418a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1782070308247-5b3eeed2f3f8?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1782178393978-5b64b784bbac?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxM3x8fGVufDB8fHx8fA%3D%3D"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1782372620672-6e4404b3f06f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1782252152135-f4fa52702e5f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D"
+        alt="gallery img"
+      />
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1782458839518-f054438c3866?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D"
+        alt="gallery img"
+      />
+    </div>
+
+    <script>
+      const elImgs = document.querySelectorAll("img")
+      const elbody = document.body
+
+      elImgs.forEach(element => {
+          element.addEventListener("click", changeBg)
+
+          function changeBg() {
+            console.log(element.src)
+            elbody.style.backgroundImage = `url(${element.src})`
+      }
+      });
+
+
+    //   elbody.style.backgroundImage = "https://images.unsplash.com/photo-1782458839518-f054438c3866?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D"
+    //   console.log(elbody.style.backgroundImage)
+      // const elimg = document.querySelector("img")
+      // console.log(elimg.src)
+    </script>
+  </body>
+</html>

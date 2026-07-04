@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="checkbox" name="check" id="check1" value="checked" />
+    <label for="check1">Click to enable the submit button</label>
+    <input type="submit" name="" id="submit" disabled="disabled">
+
+    <p>Checkbox status: <span id="check-status"></span></p>
+
+    <script>
+      const elCheckbox = document.getElementById("check1");
+      const elStatus = document.getElementById("check-status");
+      const elSubmitBtn = document.getElementById('submit')
+
+      elCheckbox.addEventListener("change", () => {
+        if (elCheckbox.checked) {
+          elStatus.textContent = "checked";
+            elSubmitBtn.removeAttribute("disabled", "disabled")
+        } else if (!elCheckbox.checked) {
+          elStatus.textContent = "un-checked";
+            elSubmitBtn.setAttribute("disabled", "disabled")
+
+        }
+      });
+
+      
+    </script>
+  </body>
+</html>

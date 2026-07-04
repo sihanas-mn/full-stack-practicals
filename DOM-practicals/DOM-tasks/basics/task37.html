@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="get-val">
+    <p>output: <span id="output"></span></p>
+    <button onclick="showVal()">click to show</button>
+
+    <script>
+        const elInp = document.getElementById("get-val")
+        const elOut = document.getElementById("output")
+
+        function showVal() {
+            elOut.textContent = elInp.value
+        }
+    </script>
+</body>
+</html>

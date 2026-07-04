@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>select your gender</p>
+
+    <input type="radio" name="gender" id="male" value="male" />
+    <label for="male">Male</label>
+    <input type="radio" name="gender" id="female" value="female" />
+    <label for="female">Female</label>
+
+    <p>selected gender: <span id="show-gender"></span></p>
+
+    <script>
+      //   const elMaleRadio = document.getElementById("male");
+      //   const elFemaleRadio = document.getElementById("female");
+      const elShowGender = document.getElementById("show-gender");
+      const elGenderRadio = document.querySelectorAll('input[name="gender"]');
+
+      let genderOut = "";
+
+      elGenderRadio.forEach((element) => {
+        element.addEventListener("change", function (element) {
+          elShowGender.textContent = element.target.value;
+        });
+      });
+
+      //   elMaleRadio.addEventListener("change", showGender);
+      //   elFemaleRadio.addEventListener("change", showGender);
+
+      //   let showGender = () => {
+      //     elShowGender.textContent = elMaleRadio.value;
+      //   };
+    </script>
+  </body>
+</html>

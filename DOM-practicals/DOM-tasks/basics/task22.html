@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        type="text"
+        name="name"
+        id="name-inp"
+        placeholder="enter your name"
+      />
+      <input type="text" name="age" id="age-inp" placeholder="enter your age" />
+      <button id="submit">submit data</button>
+
+      <ul></ul>
+
+      <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr id="additionals"></tr>
+      </table>
+
+      <script>
+        let tableDetail = document.getElementById("additionals")
+
+        let userData = [
+          {
+            name: "john",
+            age: 20,
+          },
+          {
+            name: "alice",
+            age: 18,
+          },
+        ];
+
+        let name = userData.map((user) => user.name);
+        let age = userData.map(user => user.age)
+        //    console.log(name)
+
+        let names = name.forEach((element) => {
+          tableDetail.innerHTML += `<td>${element}</td>`;
+        });
+      </script>
+    </form>
+  </body>
+</html>

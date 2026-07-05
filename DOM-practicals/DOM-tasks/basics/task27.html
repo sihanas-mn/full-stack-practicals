@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="action-btn">Show paragraph</button>
+    <p id="collapsible">
+      Lorem ipsum dolor sit amet consectetur adipisicing. Lorem ipsum dolor sit,
+      amet consectetur adipisicing elit. Hic error est distinctio repellat!
+      Aliquid fuga repellendus nam optio animi eveniet. Lorem ipsum dolor sit
+      amet consectetur, adipisicing elit. Eveniet aliquam assumenda vitae
+      ratione debitis numquam libero quis laborum magnam. Minus non voluptatibus
+      dolore quae eum atque illo tenetur quod repellendus? Deserunt ullam modi
+      id natus illum vel repellat quia distinctio?
+    </p>
+
+    <script>
+        const elBtn = document.getElementById('action-btn')
+        const elPara = document.getElementById('collapsible')
+        
+        elBtn.addEventListener("click", () => {
+            // elPara.style.display = 'none'
+
+            if (elPara.style.display === 'none') {
+                elPara.style.display = 'block'
+            } else {
+                elPara.style.display = 'none'
+            }
+        })
+    </script>
+  </body>
+</html>

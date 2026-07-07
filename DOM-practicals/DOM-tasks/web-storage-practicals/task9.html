@@ -12,7 +12,25 @@
     <p id="saved-note"></p>
 
     <script>
-        
+        const elInp = document.getElementById("noteInp")
+        const elShowNote = document.getElementById("saved-note")
+        const elSaveNoteBtn = document.getElementById("save-note")
+
+        elSaveNoteBtn.addEventListener("click", saveNote)
+
+        // let saveNote = () => {
+        //     localStorage.setItem("note", elInp.value)
+        // }
+
+        function saveNote() {
+            elShowNote.innerHTML += `<p>${elInp.value}</p>`
+            localStorage.setItem("note", elShowNote.innerHTML)
+        }
+
+        if (localStorage) {
+            elShowNote.innerHTML = localStorage.getItem("note")
+        }
+
     </script>
 </body>
 </html>

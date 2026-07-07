@@ -20,7 +20,11 @@
         function addTask() {
             let newTask = elTaskInput.value
             elTaskList.innerHTML += `<li>${newTask}</li>`
-            localStorage.setItem("tasks", JSON.stringify(elTaskList.innerHTML))
+            localStorage.setItem("tasks",(elTaskList.innerHTML))
+        }
+
+        if (localStorage.getItem) {
+            elTaskList.innerHTML = localStorage.getItem("tasks")
         }
 
     </script>

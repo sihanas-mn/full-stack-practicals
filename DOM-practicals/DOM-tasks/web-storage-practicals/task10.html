@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>language preference: <span id="show-preference"></span></p>
+    <select name="" id="lang-preference">
+      <option value="">Select a language</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Mandarin">Mandarin</option>
+    </select>
+
+    <script>
+      const elLang = document.getElementById('lang-preference')
+      const elLangPrefShow = document.getElementById("show-preferece");
+    //   console.log(elLang)
+
+    elLang.addEventListener("change", showLang)
+
+    function showLang() {
+        
+    }
+
+      
+    </script>
+  </body>
+</html>

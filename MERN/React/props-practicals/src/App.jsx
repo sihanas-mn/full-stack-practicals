@@ -11,6 +11,7 @@ import StudentDashboard from "./StudentDashboard";
 import ProfilePage from "./ProfilePage";
 import RestaurantMenu from "./RestaurantMenu";
 import AnalyticsBoard from "./AnalyticsBoard";
+import Layout from "./Layout";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,9 @@ function App() {
       <StudentDashboard></StudentDashboard>
       <ProfilePage></ProfilePage>
       <RestaurantMenu></RestaurantMenu>
+      <Layout></Layout>
       <AnalyticsBoard></AnalyticsBoard>
+
     </>
   );
 }

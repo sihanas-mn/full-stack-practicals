@@ -11,6 +11,8 @@ import LikeCounter from './components/LikeCounter'
 import CharacterCounter from './components/CharacterCounter'
 import ThemeToggle from './components/ThemeToggle'
 import BalanceCalculator from './components/BalanceCalculator'
+import ShoppingCartQuantitySelector from './components/ShoppingCartQuantitySelector'
+import RenderBasedOnLoginStatus from './components/RenderBasedOnLoginStatus'
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
       <CharacterCounter></CharacterCounter>
       <ThemeToggle></ThemeToggle>
       <BalanceCalculator></BalanceCalculator>
+      <ShoppingCartQuantitySelector></ShoppingCartQuantitySelector>
+      <RenderBasedOnLoginStatus></RenderBasedOnLoginStatus>
     </>
   )
 }

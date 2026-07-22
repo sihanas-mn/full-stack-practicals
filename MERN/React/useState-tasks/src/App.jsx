@@ -16,6 +16,7 @@ import RenderBasedOnLoginStatus from './components/RenderBasedOnLoginStatus'
 import ShowHidePasswordFeature from './components/ShowHidePasswordFeature'
 import AgeChecker from './components/AgeChecker'
 import BackgroundColorChanger from './components/BackgroundColorChanger'
+import CelsiusToFarenheit from './components/CelsiusToFarenheit'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       <ShowHidePasswordFeature></ShowHidePasswordFeature>
       <AgeChecker></AgeChecker>
       <BackgroundColorChanger></BackgroundColorChanger>
+      <CelsiusToFarenheit></CelsiusToFarenheit>
     </>
   )
 }

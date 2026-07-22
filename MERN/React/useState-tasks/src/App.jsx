@@ -14,6 +14,8 @@ import BalanceCalculator from './components/BalanceCalculator'
 import ShoppingCartQuantitySelector from './components/ShoppingCartQuantitySelector'
 import RenderBasedOnLoginStatus from './components/RenderBasedOnLoginStatus'
 import ShowHidePasswordFeature from './components/ShowHidePasswordFeature'
+import AgeChecker from './components/AgeChecker'
+import BackgroundColorChanger from './components/BackgroundColorChanger'
 
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
       <ShoppingCartQuantitySelector></ShoppingCartQuantitySelector>
       <RenderBasedOnLoginStatus></RenderBasedOnLoginStatus>
       <ShowHidePasswordFeature></ShowHidePasswordFeature>
+      <AgeChecker></AgeChecker>
+      <BackgroundColorChanger></BackgroundColorChanger>
     </>
   )
 }

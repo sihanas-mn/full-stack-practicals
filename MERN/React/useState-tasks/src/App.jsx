@@ -13,6 +13,7 @@ import ThemeToggle from './components/ThemeToggle'
 import BalanceCalculator from './components/BalanceCalculator'
 import ShoppingCartQuantitySelector from './components/ShoppingCartQuantitySelector'
 import RenderBasedOnLoginStatus from './components/RenderBasedOnLoginStatus'
+import ShowHidePasswordFeature from './components/ShowHidePasswordFeature'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <BalanceCalculator></BalanceCalculator>
       <ShoppingCartQuantitySelector></ShoppingCartQuantitySelector>
       <RenderBasedOnLoginStatus></RenderBasedOnLoginStatus>
+      <ShowHidePasswordFeature></ShowHidePasswordFeature>
     </>
   )
 }

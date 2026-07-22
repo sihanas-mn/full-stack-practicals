@@ -10,6 +10,7 @@ import OnAndOff from './components/OnAndOff'
 import LikeCounter from './components/LikeCounter'
 import CharacterCounter from './components/CharacterCounter'
 import ThemeToggle from './components/ThemeToggle'
+import BalanceCalculator from './components/BalanceCalculator'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
       <LikeCounter></LikeCounter>
       <CharacterCounter></CharacterCounter>
       <ThemeToggle></ThemeToggle>
+      <BalanceCalculator></BalanceCalculator>
     </>
   )
 }

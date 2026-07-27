@@ -12,6 +12,8 @@ import KeyPressDetection from "./event-components/KeyPressDetection";
 import EnterKeyDetection from "./event-components/EnterKeyDetection";
 import FormSubmit from "./event-components/FormSubmit";
 import DropdownChange from "./event-components/dropdownChange";
+import CheckboxEvent from "./event-components/CheckboxEvent";
+import RadioButtonEvent from "./event-components/RadioButtonEvent";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,8 +47,10 @@ function App() {
 <DropdownChange></DropdownChange>
       <br></br>
       <br></br>
+      <CheckboxEvent></CheckboxEvent>
       <br></br>
       <br></br>
+      <RadioButtonEvent></RadioButtonEvent>
       <br></br>
       <br></br>
       <br></br>

@@ -9,7 +9,7 @@ const DropdownChange = () => {
   return (
     <>
       <h1>DropdownChange</h1>
-      <select name="" id="dropDown" onChange={() => DropdownChange}>
+      <select name="" id="dropDown" onChange={() => assignValue(event)}>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

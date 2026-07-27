@@ -14,6 +14,9 @@ import FormSubmit from "./event-components/FormSubmit";
 import DropdownChange from "./event-components/dropdownChange";
 import CheckboxEvent from "./event-components/CheckboxEvent";
 import RadioButtonEvent from "./event-components/RadioButtonEvent";
+import MultipleNavigation from "./event-components/MultipleNavigation";
+import ImageClickEvent from "./event-components/ImageClickEvent";
+import RightClickEvent from "./event-components/RightClickEvent";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -44,7 +47,7 @@ function App() {
       <FormSubmit></FormSubmit>
       <br></br>
       <br></br>
-<DropdownChange></DropdownChange>
+      <DropdownChange></DropdownChange>
       <br></br>
       <br></br>
       <CheckboxEvent></CheckboxEvent>
@@ -53,10 +56,13 @@ function App() {
       <RadioButtonEvent></RadioButtonEvent>
       <br></br>
       <br></br>
+      <MultipleNavigation></MultipleNavigation>
       <br></br>
       <br></br>
+      <ImageClickEvent></ImageClickEvent>
       <br></br>
       <br></br>
+      <RightClickEvent></RightClickEvent>
       <br></br>
       <br></br>
       <br></br>

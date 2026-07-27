@@ -17,6 +17,9 @@ import ShowHidePasswordFeature from './components/ShowHidePasswordFeature'
 import AgeChecker from './components/AgeChecker'
 import BackgroundColorChanger from './components/BackgroundColorChanger'
 import CelsiusToFarenheit from './components/CelsiusToFarenheit'
+import ToDoList from './components/ToDoList'
+import FAQAccordian from './components/FAQAccordian'
+import Calculator from './components/Calculator'
 
 function App() {
 
@@ -36,6 +39,9 @@ function App() {
       <AgeChecker></AgeChecker>
       <BackgroundColorChanger></BackgroundColorChanger>
       <CelsiusToFarenheit></CelsiusToFarenheit>
+      <ToDoList></ToDoList>
+      <FAQAccordian></FAQAccordian>
+      <Calculator></Calculator>
     </>
   )
 }

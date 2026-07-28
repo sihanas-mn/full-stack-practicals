@@ -17,6 +17,7 @@ import RadioButtonEvent from "./event-components/RadioButtonEvent";
 import MultipleNavigation from "./event-components/MultipleNavigation";
 import ImageClickEvent from "./event-components/ImageClickEvent";
 import RightClickEvent from "./event-components/RightClickEvent";
+import TaskManager from "./event-components/FetchAPI";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -65,6 +66,7 @@ function App() {
       <RightClickEvent></RightClickEvent>
       <br></br>
       <br></br>
+      <TaskManager></TaskManager>
       <br></br>
       <br></br>
     </>

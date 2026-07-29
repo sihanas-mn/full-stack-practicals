@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="POST">
+      <label for="user-id">ID</label>
+      <input type="text" name="id" id="ID-inp" />
+
+      <button type="submit">Delete Data</button>
+
+      <div id="display-field"></div>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      const IDInp = document.getElementById("ID-inp");
+      const displayField = document.getElementById("display-field");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); //stop auto reload of the page
+
+        fetch(`https://jsonplaceholder.typicode.com/posts/${IDInp.value}`, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            displayField.innerHTML = `
+                <h3>Successfully Deleted! ID: ${IDInp.value}</h3>
+                `;
+          });
+      });
+    </script>
+  </body>
+</html>

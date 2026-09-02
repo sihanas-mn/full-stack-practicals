@@ -1,0 +1,159 @@
+/* ═══════════════════════════════════════════════════════════
+   A&Y Consolidated — Design Tokens
+   Editorial Luxury Identity
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Brand Colors ─────────────────────────────────────── */
+  --color-burgundy: #6F0B18;
+  --color-burgundy-light: #8B1E2B;
+  --color-burgundy-dark: #520812;
+  --color-wine: #2B0B10;
+  --color-wine-deep: #1A0609;
+  --color-charcoal: #171717;
+  --color-gold: #C5A253;
+  --color-gold-light: #D4B76C;
+  --color-gold-dark: #A68A3E;
+  --color-ivory: #F7F2E8;
+  --color-warm-grey: #E8E2D9;
+  --color-warm-grey-dark: #C4BDB3;
+  --color-white: #FFFFFF;
+
+  /* ─── Semantic Colors ──────────────────────────────────── */
+  --color-success: #2D7F46;
+  --color-success-bg: #E8F5E9;
+  --color-warning: #B8860B;
+  --color-warning-bg: #FFF8E1;
+  --color-error: #C62828;
+  --color-error-bg: #FFEBEE;
+  --color-info: #1565C0;
+  --color-info-bg: #E3F2FD;
+
+  /* ─── Status Colors ────────────────────────────────────── */
+  --status-proposed: #B8860B;
+  --status-confirmed: #2D7F46;
+  --status-construction: #1565C0;
+  --status-complete: #2D7F46;
+  --status-coming-soon: #6F0B18;
+  --status-available: #2D7F46;
+  --status-on-hold: #B8860B;
+  --status-reserved: #1565C0;
+  --status-sold: #171717;
+
+  /* ─── Typography ───────────────────────────────────────── */
+  --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.2em;
+
+  /* ─── Spacing ──────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ─── Layout ───────────────────────────────────────────── */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  --content-width: 1200px;
+  --sidebar-width: 260px;
+
+  /* ─── Borders & Radii ──────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  --border-thin: 1px solid var(--color-warm-grey);
+  --border-gold: 1px solid var(--color-gold);
+  --border-dark: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* ─── Shadows ──────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-gold: 0 4px 20px rgba(197, 162, 83, 0.15);
+  --shadow-burgundy: 0 4px 20px rgba(111, 11, 24, 0.15);
+
+  /* ─── Glassmorphism / Liquid Glass ─── */
+  --glass-bg-light: rgba(255, 255, 255, 0.4);
+  --glass-bg-light-hover: rgba(255, 255, 255, 0.6);
+  --glass-bg-dark: rgba(23, 23, 23, 0.5);
+  --glass-bg-dark-hover: rgba(23, 23, 23, 0.7);
+  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(16px) saturate(180%);
+
+  /* ─── Transitions ──────────────────────────────────────── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── Z-Index ──────────────────────────────────────────── */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+    --transition-spring: 0ms;
+  }
+}

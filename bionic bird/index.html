@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="APIS-IX Bionic Pollinator — A scroll-reactive cinematic showcase of the world's most advanced biomechanical drone." />
+  <title>APIS-IX — Bionic Pollinator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       BACKGROUND CANVAS (fixed, full-bleed)
+  ══════════════════════════════════════════════ -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Grid texture overlay -->
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress-bar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
+
+  <!-- ══════════════════════════════════════════════
+       PRELOADER
+  ══════════════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">APIS • IX</div>
+      <p class="loader-label" id="loaderText">LOADING TELEMETRY 0%</p>
+      <div class="loader-track">
+        <div class="loader-fill" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       FIXED NAVBAR
+  ══════════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="nav-logo" aria-label="APIS-IX">APIS <span class="dot">•</span> IX</div>
+    <nav class="nav-links" role="navigation" aria-label="Primary navigation">
+      <a href="#hero"    id="nav-overview"     class="nav-link active">OVERVIEW</a>
+      <a href="#wings"   id="nav-propulsion"   class="nav-link">PROPULSION</a>
+      <a href="#neural"  id="nav-mechanics"    class="nav-link">MECHANICS</a>
+      <a href="#chassis" id="nav-exoskeleton"  class="nav-link">EXOSKELETON</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════════
+       SCROLLABLE CONTENT WRAPPER
+  ══════════════════════════════════════════════ -->
+  <div id="scroll-container">
+
+    <!-- ────────────────────────────────────────
+         SECTION 1 — HERO / OVERVIEW
+    ──────────────────────────────────────── -->
+    <section id="hero" class="scroll-section" aria-label="Overview">
+      <!-- Upper-left title block -->
+      <div class="hero-title-block">
+        <p class="section-tag">OVERVIEW</p>
+        <h1 class="hero-heading">APIS-IX<br/>BIONIC<br/>POLLINATOR</h1>
+        <p class="hero-sub">The apex of autonomous<br/>biomechanical engineering.</p>
+      </div>
+
+      <!-- Bottom-left scroll cue -->
+      <div class="scroll-cue" aria-label="Scroll to disassemble">
+        <span class="scroll-cue-line"></span>
+        <span class="scroll-cue-text">SCROLL TO DISASSEMBLE</span>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────
+         SECTION 2 — PROPULSION / WINGS
+    ──────────────────────────────────────── -->
+    <section id="wings" class="scroll-section" aria-label="Propulsion">
+      <div class="side-split-layout">
+
+        <!-- LEFT: 01 PROPULSION -->
+        <div class="side-column left-dock">
+          <div class="side-block-item">
+            <p class="item-tag">01 // PROPULSION</p>
+            <h2 class="item-title">PIEZO WINGS</h2>
+            <p class="item-body">Piezoelectric actuators generate micro-scale wing oscillation at 280Hz — invisible to the human eye, silent to human ears.</p>
+          </div>
+          <div class="side-block-item">
+            <p class="item-tag">FREQUENCY</p>
+            <p class="item-stat">280 Hz</p>
+          </div>
+          <div class="side-block-item">
+            <p class="item-tag">STROKE AMPLITUDE</p>
+            <p class="item-stat">±14°</p>
+          </div>
+        </div>
+
+        <!-- CENTER: protected zone -->
+        <div class="center-gap" aria-hidden="true"></div>
+
+        <!-- RIGHT: AERODYNAMICS -->
+        <div class="side-column right-dock">
+          <div class="side-block-item">
+            <p class="item-tag">AERODYNAMICS</p>
+            <h2 class="item-title">FLUID<br/>DYNAMICS</h2>
+            <p class="item-body">Wake-capture & clap-fling mechanisms replicate biological insect flight — achieving lift coefficients impossible with fixed-wing or rotary designs.</p>
+          </div>
+          <div class="side-block-item">
+            <p class="item-tag">LIFT COEFFICIENT</p>
+            <p class="item-stat">CL 3.2</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────
+         SECTION 3 — MECHANICS / NEURAL
+    ──────────────────────────────────────── -->
+    <section id="neural" class="scroll-section" aria-label="Mechanics">
+      <div class="side-split-layout">
+
+        <!-- LEFT: 02 MECHANICS -->
+        <div class="side-column left-dock">
+          <div class="side-block-item">
+            <p class="item-tag">02 // MECHANICS</p>
+            <h2 class="item-title">MICRO<br/>GEARBOX</h2>
+            <p class="item-body">Titanium alloy epicyclic gearbox — 0.8mm diameter, 40,000 RPM input, near-zero backlash. Torque density unmatched at this scale.</p>
+          </div>
+          <div class="side-block-item">
+            <p class="item-tag">GEAR RATIO</p>
+            <p class="item-stat">1 : 18.4</p>
+          </div>
+          <div class="side-block-item">
+            <p class="item-tag">MASS</p>
+            <p class="item-stat">0.023 g</p>
+          </div>
+        </div>
+
+        <!-- CENTER: protected zone -->
+        <div class="center-gap" aria-hidden="true"></div>
+
+        <!-- RIGHT: AI VISION SENSOR -->
+        <div class="side-column right-dock">
+          <div class="side-block-item">
+            <p class="item-tag">AI VISION SENSOR</p>
+            <h2 class="item-title">NEURAL<br/>OPTICS</h2>
+            <p class="item-body">A compound-eye array of 512 micro-lenses feeds a dedicated edge-AI chip — 120fps obstacle avoidance and autonomous pollination targeting.</p>
+          </div>
+          <div class="side-block-item">
+            <p class="item-tag">FRAME RATE</p>
+            <p class="item-stat">120 fps</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────
+         SECTION 4 — SPECIFICATIONS / CHASSIS
+    ──────────────────────────────────────── -->
+    <section id="chassis" class="scroll-section" aria-label="Specifications">
+      <div class="side-split-layout">
+
+        <!-- LEFT: 03 SPECIFICATIONS -->
+        <div class="side-column left-dock">
+          <div class="side-block-item">
+            <p class="item-tag">03 // SPECIFICATIONS</p>
+            <h2 class="item-title">CHASSIS</h2>
+          </div>
+          <div class="metric-stat-item">
+            <p class="metric-label">CHASSIS WEIGHT</p>
+            <p class="metric-value">1.18 G</p>
+          </div>
+          <div class="metric-stat-item">
+            <p class="metric-label">MAX PAYLOAD</p>
+            <p class="metric-value">2.40 G</p>
+          </div>
+          <div class="metric-stat-item">
+            <p class="metric-label">WINGSPAN</p>
+            <p class="metric-value">34 MM</p>
+          </div>
+        </div>
+
+        <!-- CENTER: protected zone -->
+        <div class="center-gap" aria-hidden="true"></div>
+
+        <!-- RIGHT: ENVIRONMENT + NETWORK -->
+        <div class="side-column right-dock">
+          <div class="side-block-item">
+            <p class="item-tag">SYSTEM RATINGS</p>
+            <h2 class="item-title">GRADE</h2>
+          </div>
+          <div class="metric-stat-item">
+            <p class="metric-label">ENVIRONMENT RATING</p>
+            <p class="metric-value">IP68</p>
+          </div>
+          <div class="metric-stat-item">
+            <p class="metric-label">SWARM NETWORK</p>
+            <p class="metric-value">6G UWB</p>
+          </div>
+          <div class="metric-stat-item">
+            <p class="metric-label">BATTERY LIFE</p>
+            <p class="metric-value">38 MIN</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /scroll-container -->
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-brand">APIS • IX</span>
+      <span class="footer-sep">—</span>
+      <span class="footer-copy">BIONIC POLLINATOR &copy; 2026 &nbsp;|&nbsp; BIOMECHANICAL ENGINEERING DIVISION</span>
+      <span class="footer-sep">—</span>
+      <span class="footer-right">UNIT #IX-001 &nbsp; CLASSIFIED</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

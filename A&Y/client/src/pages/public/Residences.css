@@ -1,0 +1,155 @@
+/* ═══════════════════════════════════════════════════════════
+   Page Hero & Residences Styles
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Page Hero (reusable) ───────────────────────────────── */
+.page-hero {
+  padding: calc(72px + var(--space-16)) 0 var(--space-16);
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.page-hero--burgundy {
+  background: linear-gradient(135deg, var(--color-wine-deep) 0%, var(--color-burgundy-dark) 100%);
+}
+
+.page-hero__title {
+  font-size: var(--text-5xl);
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.page-hero__subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  line-height: var(--leading-relaxed);
+}
+
+@media (max-width: 768px) {
+  .page-hero__title { font-size: var(--text-3xl); }
+}
+
+/* ─── Residences Filters ─────────────────────────────────── */
+.residences-filters {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.residences-filters .form-select {
+  width: auto;
+  min-width: 160px;
+}
+
+/* ─── Unit Grid ──────────────────────────────────────────── */
+.residences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ─── Unit Card ──────────────────────────────────────────── */
+.unit-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-warm-grey);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.unit-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.unit-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-warm-grey);
+}
+
+.unit-card__id {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-burgundy);
+}
+
+.unit-card__plan {
+  aspect-ratio: 16/9;
+  background: var(--color-ivory);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  color: var(--color-warm-grey-dark);
+  font-size: var(--text-sm);
+}
+
+.unit-card__body {
+  padding: var(--space-5);
+}
+
+.unit-card__type {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+}
+
+.unit-card__meta {
+  display: flex;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: #888;
+  margin-bottom: var(--space-3);
+}
+
+.unit-card__size {
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.unit-card__price {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.unit-card__price-value {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-burgundy);
+}
+
+.unit-card__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ─── Compare Drawer ─────────────────────────────────────── */
+.compare-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  padding: var(--space-4) 0;
+  z-index: var(--z-fixed);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp var(--transition-base) ease;
+}
+
+/* ─── Mortgage Calc ──────────────────────────────────────── */
+.mortgage-calc {
+  border: 1px solid var(--color-gold);
+}

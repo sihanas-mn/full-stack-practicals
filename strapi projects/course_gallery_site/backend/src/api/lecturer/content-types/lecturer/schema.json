@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lecturers",
+  "info": {
+    "singularName": "lecturer",
+    "pluralName": "lecturers",
+    "displayName": "Lecturer",
+    "description": "Faculty Members & Course Instructors"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "profile_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "designation": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "qualification": {
+      "type": "richtext"
+    },
+    "experience_years": {
+      "type": "integer"
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "active_status": {
+      "type": "boolean",
+      "default": true
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "lecturer"
+    }
+  }
+}

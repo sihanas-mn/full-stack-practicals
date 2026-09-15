@@ -1,0 +1,123 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": "Academic Courses Catalog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course_title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "course_title",
+      "required": true
+    },
+    "course_code": {
+      "type": "string",
+      "required": true
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "full_description": {
+      "type": "richtext"
+    },
+    "course_thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "course_banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "courses"
+    },
+    "lecturer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lecturer.lecturer",
+      "inversedBy": "courses"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "discount_price": {
+      "type": "decimal"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": ["LKR", "USD"],
+      "default": "USD"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "lesson_count": {
+      "type": "integer"
+    },
+    "course_level": {
+      "type": "enumeration",
+      "enum": ["Beginner", "Intermediate", "Advanced"],
+      "default": "Beginner"
+    },
+    "delivery_mode": {
+      "type": "enumeration",
+      "enum": ["Online", "Physical", "Hybrid"],
+      "default": "Online"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "requirements": {
+      "type": "richtext"
+    },
+    "what_you_learn": {
+      "type": "richtext"
+    },
+    "certification": {
+      "type": "boolean",
+      "default": true
+    },
+    "featured_course": {
+      "type": "boolean",
+      "default": false
+    },
+    "course_status": {
+      "type": "enumeration",
+      "enum": ["Draft", "Published", "Upcoming"],
+      "default": "Published"
+    },
+    "seo_title": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "text"
+    },
+    "inquiries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::inquiry.inquiry",
+      "mappedBy": "course"
+    }
+  }
+}

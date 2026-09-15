@@ -11,6 +11,28 @@ const client = axios.create({
   },
 });
 
+const strapiOrigin = new URL(config.strapiUrl).origin;
+
+const toAbsoluteMediaUrl = (url) => {
+  if (typeof url !== 'string' || !url.startsWith('/uploads/')) return url;
+  return `${strapiOrigin}${url}`;
+};
+
+const normalizeMedia = (media) => {
+  if (!media || typeof media !== 'object') return media;
+
+  const normalized = { ...media, url: toAbsoluteMediaUrl(media.url) };
+  if (media.formats) {
+    normalized.formats = Object.fromEntries(
+      Object.entries(media.formats).map(([name, format]) => [
+        name,
+        { ...format, url: toAbsoluteMediaUrl(format.url) },
+      ])
+    );
+  }
+  return normalized;
+};
+
 // In-memory inquiry store as backup/cache
 const inquiriesStore = [];
 
@@ -34,6 +56,10 @@ const normalizeItem = (item) => {
         result[key] = normalizeItem(result[key].data);
       }
     }
+  }
+
+  for (const key of ['course_thumbnail', 'course_banner', 'profile_image', 'image']) {
+    if (result[key]) result[key] = normalizeMedia(result[key]);
   }
 
   // Assign relatable generated image for courses if missing

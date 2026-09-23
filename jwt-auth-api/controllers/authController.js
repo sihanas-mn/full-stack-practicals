@@ -12,7 +12,7 @@ const createToken = (user) => {
 
 const register = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
     if (!name || !email || !password) {
       return res.status(400).json({ message: "Name, email and password are required" });
     }
@@ -23,10 +23,12 @@ const register = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    const userRole = role === "admin" ? "admin" : "user";
     const user = await User.create({
       name,
       email,
-      password: hashedPassword
+      password: hashedPassword,
+      role: userRole
     });
 
     res.status(201).json({
@@ -39,7 +41,7 @@ const register = async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
 
@@ -57,9 +59,19 @@ const login = async (req, res) => {
     }
 
     const token = createToken(user);
+
+    // Set JWT token in Cookie
+    res.cookie("token", token, {
+      maxAge: 3600000, // 1 hour
+      httpOnly: false, // Allows frontend inspection & manual cookie testing
+      sameSite: "lax",
+      path: "/"
+    });
+
     res.json({
       message: "Login successful",
       token,
+      cookieSet: true,
       user: {
         id: user._id,
         name: user.name,
@@ -68,8 +80,14 @@ const login = async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 };
 
-module.exports = { register, login };
+const logout = async (req, res) => {
+  res.clearCookie("token", { path: "/" });
+  res.clearCookie("jwt", { path: "/" });
+  res.json({ message: "Logged out successfully. Cookie cleared." });
+};
+
+module.exports = { register, login, logout };

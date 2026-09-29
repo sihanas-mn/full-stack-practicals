@@ -57,7 +57,8 @@ export const AuthProvider = ({ children }) => {
         login,
         register,
         logout,
-        checkAuth
+        checkAuth,
+        updateUser: (updatedUser) => setUser((prev) => ({ ...prev, ...updatedUser }))
       }}
     >
       {children}

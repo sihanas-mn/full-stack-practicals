@@ -31,6 +31,10 @@ const courseSchema = new mongoose.Schema(
       type: String,
       enum: ["Active", "Inactive"],
       default: "Active"
+    },
+    bannerImage: {
+      type: String,
+      default: ""
     }
   },
   {

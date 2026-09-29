@@ -4,7 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
+    <meta name="description" content="MERN Student Management System - Manage students, courses, enrollments and attendance with custom color palettes and dark mode." />
+    <title>Student Management System</title>
+    <!-- Prevent theme and palette flash on initial load -->
+    <script>
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('sms_theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+
+          const storedPalette = localStorage.getItem('sms_palette') || 'blue';
+          document.documentElement.setAttribute('data-palette', storedPalette);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

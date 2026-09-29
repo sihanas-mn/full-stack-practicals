@@ -3,13 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
 import {
   ArrowLeft,
-  CalendarCheck,
   CheckCircle2,
   AlertCircle,
   Loader2,
-  UserCheck,
-  AlertTriangle,
-  Info
+  UserCheck
 } from "lucide-react";
 import Loading from "../components/Loading";
 
@@ -197,45 +194,45 @@ const MarkAttendance = () => {
       <div className="flex items-center gap-4">
         <Link
           to="/attendance"
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-slate-500 ring-1 ring-slate-200 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-slate-700 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-colors"
         >
           <ArrowLeft className="h-5 w-5" />
         </Link>
         <div>
-          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
+          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Mark Class Attendance
           </h1>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Select course and date to register daily attendance roll call.
           </p>
         </div>
       </div>
 
       {error && (
-        <div className="flex items-center gap-2.5 rounded-xl bg-rose-50 p-4 text-sm text-rose-700 ring-1 ring-rose-200">
+        <div className="flex items-center gap-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 p-4 text-sm text-rose-700 dark:text-rose-400 ring-1 ring-rose-200 dark:ring-rose-900/50">
           <AlertCircle className="h-5 w-5 shrink-0 text-rose-500" />
           <span>{error}</span>
         </div>
       )}
 
       {success && (
-        <div className="flex items-center gap-2.5 rounded-xl bg-emerald-50 p-4 text-sm text-emerald-700 ring-1 ring-emerald-200">
+        <div className="flex items-center gap-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 p-4 text-sm text-emerald-700 dark:text-emerald-400 ring-1 ring-emerald-200 dark:ring-emerald-900/50">
           <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />
           <span>{success}</span>
         </div>
       )}
 
       {/* Course & Date Selector */}
-      <div className="rounded-2xl bg-white p-6 shadow-xs ring-1 ring-slate-200/80">
+      <div className="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-xs ring-1 ring-slate-200/80 dark:ring-slate-800">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
               Target Course *
             </label>
             <select
               value={selectedCourse}
               onChange={(e) => setSelectedCourse(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
             >
               {courses.map((c) => (
                 <option key={c._id} value={c._id}>
@@ -246,14 +243,14 @@ const MarkAttendance = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
               Attendance Date *
             </label>
             <input
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all"
               required
             />
           </div>
@@ -264,14 +261,14 @@ const MarkAttendance = () => {
       {loadingEnrollments ? (
         <Loading message="Loading enrolled students for this course..." />
       ) : enrollments.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-12 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-500 mb-4">
+        <div className="rounded-2xl border border-dashed border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900 p-12 text-center">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 mb-4">
             <UserCheck className="h-7 w-7" />
           </div>
-          <h3 className="text-lg font-bold text-slate-900">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
             No active students enrolled
           </h3>
-          <p className="mt-1 text-sm text-slate-500 max-w-sm mx-auto">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 max-w-sm mx-auto">
             This course currently has no students with an "Active" enrollment status.
           </p>
           <div className="mt-6">
@@ -285,13 +282,13 @@ const MarkAttendance = () => {
         </div>
       ) : (
         <form onSubmit={handleSaveAttendance} className="space-y-6">
-          <div className="overflow-hidden rounded-2xl bg-white shadow-xs ring-1 ring-slate-200/80">
-            <div className="border-b border-slate-100 bg-slate-50/80 px-6 py-4 flex items-center justify-between">
+          <div className="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-xs ring-1 ring-slate-200/80 dark:ring-slate-800">
+            <div className="border-b border-slate-100 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/50 px-6 py-4 flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-slate-800">
+                <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200">
                   Enrolled Students ({enrollments.length})
                 </h3>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-500 dark:text-slate-400">
                   Default status is set to Present. Adjust individual statuses as needed.
                 </p>
               </div>
@@ -310,14 +307,14 @@ const MarkAttendance = () => {
                     });
                     setAttendanceData(allPresent);
                   }}
-                  className="rounded-lg bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700 hover:bg-emerald-100 transition-colors"
+                  className="rounded-lg bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors cursor-pointer"
                 >
                   All Present
                 </button>
               </div>
             </div>
 
-            <div className="divide-y divide-slate-100">
+            <div className="divide-y divide-slate-100 dark:divide-slate-800">
               {enrollments.map((item) => {
                 const s = item.student;
                 if (!s) return null;
@@ -329,14 +326,14 @@ const MarkAttendance = () => {
                 return (
                   <div
                     key={s._id}
-                    className="p-4 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/60 transition-colors"
+                    className="p-4 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors"
                   >
                     <div className="sm:w-1/3">
-                      <div className="font-semibold text-slate-900">
+                      <div className="font-semibold text-slate-900 dark:text-white">
                         {s.firstName} {s.lastName}
                       </div>
-                      <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mt-0.5">
-                        <span className="text-blue-600 font-bold">{s.studentId}</span>
+                      <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                        <span className="text-blue-600 dark:text-blue-400 font-bold">{s.studentId}</span>
                         <span>•</span>
                         <span>Batch {item.batch}</span>
                       </div>
@@ -350,15 +347,15 @@ const MarkAttendance = () => {
                         if (opt === "Present") {
                           activeStyles = isSelected
                             ? "bg-emerald-600 text-white shadow-sm ring-emerald-600"
-                            : "bg-emerald-50 text-emerald-700 hover:bg-emerald-100";
+                            : "bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:text-emerald-400 dark:hover:bg-emerald-950/70";
                         } else if (opt === "Absent") {
                           activeStyles = isSelected
                             ? "bg-rose-600 text-white shadow-sm ring-rose-600"
-                            : "bg-rose-50 text-rose-700 hover:bg-rose-100";
+                            : "bg-rose-50 text-rose-700 hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-400 dark:hover:bg-rose-950/70";
                         } else {
                           activeStyles = isSelected
                             ? "bg-amber-500 text-white shadow-sm ring-amber-500"
-                            : "bg-amber-50 text-amber-700 hover:bg-amber-100";
+                            : "bg-amber-50 text-amber-700 hover:bg-amber-100 dark:bg-amber-950/40 dark:text-amber-400 dark:hover:bg-amber-950/70";
                         }
 
                         return (
@@ -381,7 +378,7 @@ const MarkAttendance = () => {
                         placeholder="Optional remarks..."
                         value={currentRecord.remarks}
                         onChange={(e) => handleRemarksChange(s._id, e.target.value)}
-                        className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-1.5 px-3 text-xs text-slate-800 placeholder:text-slate-400 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-600/10 transition-all"
+                        className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-1.5 px-3 text-xs text-slate-800 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-600/10 transition-all"
                       />
                     </div>
                   </div>
@@ -393,7 +390,7 @@ const MarkAttendance = () => {
           <div className="flex items-center justify-end gap-3 pt-2">
             <Link
               to="/attendance"
-              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             >
               Cancel
             </Link>

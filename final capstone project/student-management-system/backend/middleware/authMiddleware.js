@@ -3,7 +3,12 @@ import User from "../models/User.js";
 
 const protect = async (req, res, next) => {
   try {
-    const token = req.cookies.token;
+    let token = req.cookies?.token;
+
+    if (!token && req.headers.authorization?.startsWith("Bearer ")) {
+      token = req.headers.authorization.split(" ")[1];
+    }
+
     if (!token) {
       return res.status(401).json({
         message: "Authentication required"
@@ -26,6 +31,15 @@ const protect = async (req, res, next) => {
       message: "Invalid or expired token"
     });
   }
+};
+
+export const adminOnly = (req, res, next) => {
+  if (req.user && req.user.role === "admin") {
+    return next();
+  }
+  return res.status(403).json({
+    message: "Access denied. Administrator privileges required."
+  });
 };
 
 export default protect;

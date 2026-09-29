@@ -8,7 +8,22 @@ import studentRoutes from "./routes/studentRoutes.js";
 import courseRoutes from "./routes/courseRoutes.js";
 import enrollmentRoutes from "./routes/enrollmentRoutes.js";
 import attendanceRoutes from "./routes/attendanceRoutes.js";
+import staffRoutes from "./routes/staffRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
+import noticeRoutes from "./routes/noticeRoutes.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Ensure uploads directory exists
+const uploadsDir = path.resolve(__dirname, "uploads");
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 dotenv.config();
 
@@ -31,6 +46,9 @@ app.use(
 );
 app.use(cookieParser());
 
+// Serve static uploads folder
+app.use("/uploads", express.static(uploadsDir));
+
 app.get("/", (req, res) => {
   res.json({
     message: "Student Management API is running"
@@ -42,6 +60,9 @@ app.use("/api/students", studentRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/enrollments", enrollmentRoutes);
 app.use("/api/attendance", attendanceRoutes);
+app.use("/api/staff", staffRoutes);
+app.use("/api/upload", uploadRoutes);
+app.use("/api/notices", noticeRoutes);
 
 app.use(errorMiddleware);
 

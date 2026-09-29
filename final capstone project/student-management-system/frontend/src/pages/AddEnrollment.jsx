@@ -5,8 +5,7 @@ import {
   ArrowLeft,
   CheckCircle2,
   AlertCircle,
-  Loader2,
-  GraduationCap
+  Loader2
 } from "lucide-react";
 import Loading from "../components/Loading";
 
@@ -102,31 +101,31 @@ const AddEnrollment = () => {
       <div className="flex items-center gap-4">
         <Link
           to="/enrollments"
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-slate-500 ring-1 ring-slate-200 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-slate-700 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700/60 transition-colors"
         >
           <ArrowLeft className="h-5 w-5" />
         </Link>
         <div>
-          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
+          <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Course Enrollment
           </h1>
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Assign a student to an active course program and designated batch.
           </p>
         </div>
       </div>
 
       {error && (
-        <div className="flex items-center gap-2.5 rounded-xl bg-rose-50 p-4 text-sm text-rose-700 ring-1 ring-rose-200">
+        <div className="flex items-center gap-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 p-4 text-sm text-rose-700 dark:text-rose-400 ring-1 ring-rose-200 dark:ring-rose-900/50">
           <AlertCircle className="h-5 w-5 shrink-0 text-rose-500" />
           <span>{error}</span>
         </div>
       )}
 
       {students.length === 0 || courses.length === 0 ? (
-        <div className="rounded-2xl bg-amber-50 p-6 text-amber-800 ring-1 ring-amber-200">
+        <div className="rounded-2xl bg-amber-50 dark:bg-amber-950/40 p-6 text-amber-800 dark:text-amber-300 ring-1 ring-amber-200 dark:ring-amber-900/50">
           <h3 className="font-bold text-base">Prerequisites Missing</h3>
-          <p className="mt-1 text-sm text-amber-700">
+          <p className="mt-1 text-sm text-amber-700 dark:text-amber-300/90">
             {students.length === 0 && courses.length === 0
               ? "You must add at least one student and one active course before creating an enrollment."
               : students.length === 0
@@ -137,7 +136,7 @@ const AddEnrollment = () => {
             {students.length === 0 && (
               <Link
                 to="/students/add"
-                className="rounded-lg bg-amber-600 px-3.5 py-2 text-xs font-semibold text-white hover:bg-amber-700"
+                className="rounded-lg bg-amber-600 px-3.5 py-2 text-xs font-semibold text-white hover:bg-amber-700 transition-colors"
               >
                 Add Student
               </Link>
@@ -145,7 +144,7 @@ const AddEnrollment = () => {
             {courses.length === 0 && (
               <Link
                 to="/courses/add"
-                className="rounded-lg bg-amber-600 px-3.5 py-2 text-xs font-semibold text-white hover:bg-amber-700"
+                className="rounded-lg bg-amber-600 px-3.5 py-2 text-xs font-semibold text-white hover:bg-amber-700 transition-colors"
               >
                 Add Course
               </Link>
@@ -155,17 +154,17 @@ const AddEnrollment = () => {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl bg-white p-6 md:p-8 shadow-xs ring-1 ring-slate-200/80 space-y-6"
+          className="rounded-2xl bg-white dark:bg-slate-900 p-6 md:p-8 shadow-xs ring-1 ring-slate-200/80 dark:ring-slate-800 space-y-6"
         >
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
               Select Student *
             </label>
             <select
               name="student"
               value={form.student}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
               required
             >
               {students.map((s) => (
@@ -177,14 +176,14 @@ const AddEnrollment = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
               Select Course *
             </label>
             <select
               name="course"
               value={form.course}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
               required
             >
               {courses.map((c) => (
@@ -197,7 +196,7 @@ const AddEnrollment = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Batch Identifier *
               </label>
               <input
@@ -206,13 +205,13 @@ const AddEnrollment = () => {
                 placeholder="e.g. B001"
                 value={form.batch}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all uppercase font-semibold"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all uppercase font-semibold"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Enrollment Date *
               </label>
               <input
@@ -220,21 +219,21 @@ const AddEnrollment = () => {
                 name="enrollmentDate"
                 value={form.enrollmentDate}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all"
+                className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all"
                 required
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
               Enrollment Status *
             </label>
             <select
               name="status"
               value={form.status}
               onChange={handleChange}
-              className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 px-3.5 text-sm text-slate-800 focus:bg-white focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/60 py-2.5 px-3.5 text-sm text-slate-800 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-800 focus:border-blue-600 focus:outline-hidden focus:ring-4 focus:ring-blue-600/10 transition-all font-medium"
               required
             >
               <option value="Active">Active</option>
@@ -243,10 +242,10 @@ const AddEnrollment = () => {
             </select>
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
             <Link
               to="/enrollments"
-              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors"
+              className="rounded-xl px-5 py-2.5 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             >
               Cancel
             </Link>

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { GraduationCap, Mail, Lock, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Lock, ArrowRight, AlertCircle, Loader2, ShieldCheck, KeyRound } from "lucide-react";
 import ThemeToggle from "../components/ThemeToggle";
+import BrandLogo from "../components/BrandLogo";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,6 +21,10 @@ const Login = () => {
       ...form,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleQuickFill = (email, password) => {
+    setForm({ email, password });
   };
 
   const handleSubmit = async (e) => {
@@ -40,23 +45,50 @@ const Login = () => {
   };
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-radial from-slate-100 via-slate-50 to-blue-50/40 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/20 px-4 py-12 transition-colors duration-200">
+    <div className="relative flex min-h-screen items-center justify-center bg-radial from-slate-100 via-slate-50 to-blue-50/50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/30 px-4 py-12 transition-colors duration-200 overflow-hidden">
+      {/* Ambient background glow orbs */}
+      <div className="absolute top-10 left-10 -z-10 h-80 w-80 rounded-full bg-blue-600/10 dark:bg-blue-500/15 blur-3xl pointer-events-none animate-ambient" />
+      <div className="absolute bottom-10 right-10 -z-10 h-80 w-80 rounded-full bg-indigo-600/10 dark:bg-indigo-500/15 blur-3xl pointer-events-none animate-ambient" />
+
       {/* Top right theme switcher */}
       <div className="absolute top-5 right-5 z-20">
         <ThemeToggle />
       </div>
 
-      <div className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 p-8 md:p-10 shadow-xl shadow-slate-200/60 dark:shadow-black/50 ring-1 ring-slate-100 dark:ring-slate-800 transition-colors duration-200">
-        <div className="text-center mb-8">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-500/30 mb-4">
-            <GraduationCap className="h-8 w-8" />
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Student Management System
+      <div className="w-full max-w-md rounded-3xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 md:p-10 shadow-2xl shadow-slate-200/80 dark:shadow-black/70 ring-1 ring-slate-200/80 dark:ring-slate-800 transition-all">
+        {/* Brand Header */}
+        <div className="flex flex-col items-center text-center mb-8">
+          <BrandLogo size="lg" showBadge={true} showTagline={false} className="mb-3" />
+          <h1 className="text-xl font-display font-black tracking-tight text-slate-900 dark:text-white mt-1">
+            Enterprise Portal Sign In
           </h1>
-          <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400">
-            Sign in to manage students, courses & attendance
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 max-w-xs">
+            Authenticate to manage student lifecycle, courses & institutional records
           </p>
+        </div>
+
+        {/* Demo Credentials Helper Pill */}
+        <div className="mb-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-3 ring-1 ring-slate-100 dark:ring-slate-700/60 text-xs">
+          <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-semibold mb-2">
+            <KeyRound className="h-3.5 w-3.5 text-blue-600 dark:text-blue-400" />
+            <span>Quick Demo Credentials:</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => handleQuickFill("admin@example.com", "password123")}
+              className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-1.5 px-2 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-center cursor-pointer shadow-2xs"
+            >
+              👑 Admin Demo
+            </button>
+            <button
+              type="button"
+              onClick={() => handleQuickFill("staff@example.com", "password123")}
+              className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-1.5 px-2 text-[11px] font-bold text-slate-700 dark:text-slate-200 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-center cursor-pointer shadow-2xs"
+            >
+              🎓 Staff Demo
+            </button>
+          </div>
         </div>
 
         {error && (
@@ -111,26 +143,32 @@ const Login = () => {
             {loading ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Logging in...</span>
+                <span>Authenticating...</span>
               </>
             ) : (
               <>
-                <span>Login</span>
+                <span>Access Portal</span>
                 <ArrowRight className="h-4 w-4" />
               </>
             )}
           </button>
         </form>
 
-        <p className="mt-8 text-center text-sm text-slate-600 dark:text-slate-400">
-          Don't have an account?{" "}
+        <p className="mt-6 text-center text-xs text-slate-500 dark:text-slate-400">
+          New institutional staff?{" "}
           <Link
             to="/register"
-            className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+            className="font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
           >
-            Create an Account
+            Register Account
           </Link>
         </p>
+
+        {/* Security Trust Stamp */}
+        <div className="mt-6 flex items-center justify-center gap-1.5 text-[10px] text-slate-400 dark:text-slate-500 border-t border-slate-100 dark:border-slate-800/80 pt-4">
+          <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
+          <span>Enterprise 256-Bit TLS • Role Based Authorization</span>
+        </div>
       </div>
     </div>
   );

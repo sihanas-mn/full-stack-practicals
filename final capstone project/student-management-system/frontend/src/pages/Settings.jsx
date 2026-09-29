@@ -91,7 +91,7 @@ const Settings = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in duration-200">
       <div>
-        <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        <h1 className="text-2xl md:text-3xl font-display font-black tracking-tight text-slate-900 dark:text-white">
           Settings & Security
         </h1>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">

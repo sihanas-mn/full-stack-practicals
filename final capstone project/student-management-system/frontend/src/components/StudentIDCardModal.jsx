@@ -97,8 +97,8 @@ const StudentIDCardModal = ({ student, isOpen, onClose }) => {
                       <GraduationCap className="h-4 w-4" />
                     </div>
                     <div>
-                      <h3 className="text-xs font-black tracking-wider uppercase leading-none">
-                        Apex Institute
+                      <h3 className="text-xs font-display font-black tracking-wider uppercase leading-none">
+                        ApexEdu Academy
                       </h3>
                       <p className="text-[9px] text-blue-300 font-medium tracking-wide">
                         HIGHER EDUCATION & TECHNOLOGY

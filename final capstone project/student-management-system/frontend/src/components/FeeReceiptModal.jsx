@@ -98,11 +98,11 @@ const FeeReceiptModal = ({ enrollment, isOpen, onClose }) => {
                 <GraduationCap className="h-7 w-7" />
               </div>
               <div>
-                <h3 className="text-base font-extrabold tracking-tight text-slate-900 dark:text-white">
-                  APEX INSTITUTE OF HIGHER EDUCATION
+                <h3 className="text-base font-display font-extrabold tracking-tight text-slate-900 dark:text-white">
+                  APEXEDU™ ACADEMY & INSTITUTE OF TECHNOLOGY
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Directorate of Bursar & Academic Accounts
+                  Directorate of Bursar & Academic Accounts • Central Campus
                 </p>
                 <p className="text-[11px] text-slate-400">
                   Colombo Campus, Sri Lanka • Tel: +94 11 234 5678

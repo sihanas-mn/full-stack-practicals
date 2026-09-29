@@ -114,12 +114,12 @@ const CampusNoticeboard = () => {
             <Megaphone className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              Campus Noticeboard
+            <h2 className="text-lg font-display font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              Campus Noticeboard & Bulletins
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Live institutional circulars, academic notices and examination updates
+              ApexEdu institutional circulars, academic notices and semester examination updates
             </p>
           </div>
         </div>
@@ -127,7 +127,7 @@ const CampusNoticeboard = () => {
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-3.5 py-2 text-xs font-semibold text-white shadow-sm hover:bg-blue-700 transition-all cursor-pointer self-start sm:self-auto"
+          className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-3.5 py-2 text-xs font-semibold text-white shadow-md shadow-blue-600/20 hover:bg-blue-700 hover:shadow-lg transition-all cursor-pointer self-start sm:self-auto"
         >
           <Plus className="h-4 w-4" />
           <span>Post Announcement</span>
